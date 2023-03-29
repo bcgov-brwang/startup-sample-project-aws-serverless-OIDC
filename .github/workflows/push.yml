@@ -44,6 +44,9 @@ jobs:
       - name: bruce test for Deploying back-end using terraform
         run: |
           cd server
+          echo ${{ secrets.S3_BACKEND_NAME }}
+          echo ${{ secrets.LICENCEPLATE }}
+          echo ${{ env.environment }}
           cat <<EOF > backend.hcl
           bucket = "${{ secrets.S3_BACKEND_NAME }}"
           key = "${{ secrets.LICENCEPLATE }}/${{ env.environment }}/serverless-app.tfstate"
