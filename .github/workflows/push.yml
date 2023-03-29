@@ -41,7 +41,7 @@ jobs:
           cd server/lambda
           npm install
           
-      - name: Deploying back-end using terraform
+      - name: bruce test for Deploying back-end using terraform
         run: |
           cd server
           cat <<EOF > backend.hcl
