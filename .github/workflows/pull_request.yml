@@ -52,6 +52,8 @@ jobs:
           dynamodb_table = "terraform-remote-state-lock-${{ secrets.LICENCEPLATE }}"
           EOF
           echo "terraform init start"
+          rm -rf .terraform/
+          echo "bruce removed .terraform/"
           terraform init -backend-config=backend.hcl
           echo "terraform init end"
           terraform plan
